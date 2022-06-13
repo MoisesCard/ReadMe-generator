@@ -4,10 +4,9 @@ function renderLicenseBadge(license) {
   //if no license  then return null
   if (license === "None") {
     return '';
+  } else {
+    return `https://img.shields.io/static/v1?label=license&message=${license.replace(' ','-')}&color=red`;
   }
-
-  
-  return `https://img.shields.io/badge/license-test-red`
 }
 
 // TODO: Create a function that returns the license link
@@ -15,10 +14,9 @@ function renderLicenseBadge(license) {
 function renderLicenseLink(license) {
   if (license === "None") {
     return '';
+  } else {
+    return `http://choosealicense.com/license/${license.toLowerCase().replace(' ','-')}/`;
   }
-  //take you to license  section in TOC
-
-  //-[License](#license)
 
 }
 
@@ -27,10 +25,15 @@ function renderLicenseLink(license) {
 function renderLicenseSection(license) {
   if (license === "None") {
     return '';
-  }
-  return `## License
+  } else {
+    let licenseLink = renderLicenseLink(license)
+  return `
+  ## License
   
-  This project had the ${license} Liscense`
+  This project had the ${license} License. 
+  The link for this license is: ${licenseLink}
+  `;
+  }
 
 }
 
@@ -51,6 +54,7 @@ function generateMarkdown(data) {
   * [Usage](#usage)
   * [Contribution](#contribution)
   * [Testing](#testing)
+  * [License](#license)
   
   ## Installation
   ${data.installInstructions}
@@ -71,7 +75,7 @@ function generateMarkdown(data) {
 
   Email: ${data.emailAddress}
 
- 
+  
   ${licenseSection}
 
 `;
