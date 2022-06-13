@@ -3,18 +3,18 @@
 function renderLicenseBadge(license) { 
   //if no license  then return null
   if (license === "None") {
-    return '';
+    return ''
   } else {
-    return `https://img.shields.io/static/v1?label=license&message=${license.replace(' ','-')}&color=red`;
-  }
+    return `https://img.shields.io/static/v1?label=license&message=${license.replace(' ','-')}&color=blue`;
+    }
 }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if (license === "None") {
-    return '';
-  } else {
+    return ''
+  } else{
     return `http://choosealicense.com/license/${license.toLowerCase().replace(' ','-')}/`;
   }
 
@@ -39,7 +39,6 @@ function renderLicenseSection(license) {
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  
   let licenseBadge = renderLicenseBadge(data.projectLicense);
   let licenseSection = renderLicenseSection(data.projectLicense);
 
@@ -54,7 +53,7 @@ function generateMarkdown(data) {
   * [Usage](#usage)
   * [Contribution](#contribution)
   * [Testing](#testing)
-  * [License](#license)
+  * [Questions](#questions)
   
   ## Installation
   ${data.installInstructions}
@@ -75,7 +74,7 @@ function generateMarkdown(data) {
 
   Email: ${data.emailAddress}
 
-  
+
   ${licenseSection}
 
 `;

@@ -30,9 +30,9 @@ const promptUser = () => {
         },
         {
             type: 'list',
-            name: 'projectlicense',
+            name: 'projectLicense',
             message: 'Which license applies?: ',
-            choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'None']
+            choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'None'],
         },
         {
             type: 'input',
@@ -53,7 +53,7 @@ const promptUser = () => {
             type: 'input',
             name: 'emailAddress',
             message: 'What is your email address?:',
-            //validate
+        
         }
 
     ]); 
