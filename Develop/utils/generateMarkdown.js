@@ -5,7 +5,7 @@ function renderLicenseBadge(license) {
   if (license === "None") {
     return ''
   } else {
-    return `https://img.shields.io/static/v1?label=license&message=${license.replace(' ','-')}&color=blue`;
+    return `![${license}](https://img.shields.io/static/v1?label=license&message=${license.replace(' ','-')}&color=blue)`;
     }
 }
 
@@ -15,7 +15,7 @@ function renderLicenseLink(license) {
   if (license === "None") {
     return ''
   } else{
-    return `http://choosealicense.com/license/${license.toLowerCase().replace(' ','-')}/`;
+    return `http://choosealicense.com/licenses/${license.toLowerCase().replace(' ','-')}/`;
   }
 
 }
